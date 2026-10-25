@@ -7,7 +7,7 @@ h1,h2,h3{font-family:Lexend,Inter,sans-serif;letter-spacing:-.02em;line-height:1
 a{color:inherit}
 :focus-visible{outline:3px solid var(--blue-light);outline-offset:3px;border-radius:6px}
 .wrap{width:min(1160px,100% - 40px);margin-inline:auto}
-.sec{position:relative;padding:56px 0 12px;overflow:hidden;overflow:clip}
+.sec{position:relative;padding:56px 0 40px;overflow:hidden;overflow:clip}
 .sec[id],.cta{scroll-margin-top:var(--hh)}
 .sec.alt{background:linear-gradient(180deg,var(--bg),var(--sky))}
 .sec>.wrap{position:relative;z-index:1}
@@ -20,16 +20,12 @@ h1 em,h2 em{font-style:normal;color:var(--blue)}
 .lead{color:var(--muted);margin-top:12px;font-size:16px}
 .close{text-align:center;margin:32px auto 0;max-width:660px;font:700 clamp(17px,4.6vw,22px)/1.35 Lexend,sans-serif;letter-spacing:-.01em;text-wrap:balance}
 .close span{color:var(--blue)}
-.sf{display:flex;justify-content:space-between;align-items:center;gap:8px 16px;border-top:1px solid var(--border);margin-top:28px;padding:14px 0 18px;font-size:12.5px;color:var(--muted)}
-.sf p{margin:0}.sf b{color:var(--blue)}
-.sf .ct{white-space:nowrap}
-.sf .ct b{font:800 15px Lexend,sans-serif}
-.sf .ct span{display:none;margin-left:12px;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;text-decoration:none;background:var(--blue);color:#fff;font:600 16px/1.2 Inter,sans-serif;padding:15px 26px;border-radius:999px;box-shadow:0 10px 24px rgba(20,99,243,.28);transition:transform .2s,box-shadow .2s,background .2s}
 .btn.sm{padding:11px 18px;font-size:14px}
 .btn.ghost{background:#fff;color:var(--blue);border:1px solid var(--blue);box-shadow:none}
 .btn:disabled{background:var(--border);color:var(--muted);box-shadow:none;cursor:not-allowed;transform:none}
-.lnk{color:var(--blue);font-weight:600;text-decoration:none;border-bottom:2px solid var(--border);padding-bottom:2px}
+.lnk{position:relative;color:var(--blue);font-weight:600;text-decoration:none;border-bottom:2px solid var(--border);padding-bottom:2px}
+.lnk::after{content:"";position:absolute;inset:-10px -6px}
 .long{display:none}
 .center{text-align:center;margin-top:32px}
 .center .btn{width:100%;max-width:420px}
@@ -130,7 +126,7 @@ h1{font-weight:800;font-size:clamp(32px,8.6vw,52px);letter-spacing:-.03em;line-h
 .cmp .bd{position:static;flex:none;width:22px;height:22px;font-size:11px;border:0;box-shadow:none}
 .cmp .me{border:2px solid var(--blue);background:linear-gradient(180deg,#fff,var(--sky));order:-1}
 /* carrossel (celular): arrastar para o lado, com o próximo card à vista */
-.scrollx{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:20px;margin:0 -20px -14px;padding:8px 20px 30px;scrollbar-width:none;overscroll-behavior-x:contain}
+.scrollx{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:20px;margin-inline:-20px;margin-bottom:-14px;padding:8px 20px 30px;scrollbar-width:none;overscroll-behavior-x:contain}
 .scrollx::-webkit-scrollbar{display:none}
 .scrollx>*{flex:0 0 84%;scroll-snap-align:start}
 /* calculadora: no celular o resultado principal fica fixo no topo enquanto se mexe nos controles */
@@ -227,6 +223,7 @@ details p{padding:0 0 18px;color:var(--muted);font-size:15.5px}
 .cta{position:relative;overflow:hidden;overflow:clip;color:#fff;padding:52px 0;background:linear-gradient(135deg,var(--blue) 30%,var(--blue-light) 170%)}
 .cta .wm{opacity:.12;top:-60px;right:-70px;width:360px;height:360px}
 .cta>.wrap{position:relative;z-index:1;display:grid;gap:26px;align-items:start}
+.cta>.wrap>*{min-width:0}
 .cta h2{font-size:clamp(28px,7.4vw,46px)}
 .cta h2 em{color:#fff;background:linear-gradient(transparent 64%,rgba(255,255,255,.3) 64%)}
 .cta .of{font-size:16px;margin:14px 0 16px;opacity:.96}
@@ -276,12 +273,10 @@ fieldset{border:0;padding:0;min-width:0}
 
 /* ===== 600+: celulares grandes e tablets pequenos ===== */
 @media(min-width:600px){
-  .sec{padding:72px 0 20px}
+  .sec{padding:72px 0 56px}
   .head{margin-bottom:36px}
   .lead{font-size:18px}
   .close{margin-top:40px}
-  .sf{margin-top:40px}
-  .sf .ct span{display:inline}
   .ctas{flex-direction:row;align-items:center;flex-wrap:wrap;gap:16px 24px;text-align:left}
   .ctas .lnk{align-self:auto}
   .hv{height:500px;max-width:460px}
@@ -318,15 +313,14 @@ fieldset{border:0;padding:0;min-width:0}
 }
 /* ===== 720+: tablets ===== */
 @media(min-width:720px){
-  .sec{padding:80px 0 24px}
+  .sec{padding:80px 0 64px}
   .wm{top:-70px;right:-110px;width:440px;height:440px}
   .ico{width:76px;height:76px;margin-bottom:14px}
   .head{margin-bottom:44px}
   .close{margin-top:44px}
-  .sf{margin-top:48px;padding:18px 0 22px;font-size:13px}
   .cmp{margin-top:48px}
   /* comparativo e depoimentos deixam de ser carrossel */
-  .scrollx{display:grid;grid-template-columns:repeat(3,1fr);overflow:visible;scroll-snap-type:none;margin:0;padding:0;gap:16px}
+  .scrollx{display:grid;grid-template-columns:repeat(3,1fr);overflow:visible;scroll-snap-type:none;margin-inline:0;margin-bottom:0;padding:0;gap:16px}
   .scrollx>*{flex:none}
   .cmp .me{order:0}
   .cmp .card{padding:22px}
@@ -416,7 +410,7 @@ fieldset{border:0;padding:0;min-width:0}
 /* ===== 1360+: telas grandes ===== */
 @media(min-width:1360px){
   .wrap{width:min(1240px,100% - 80px)}
-  .sec{padding-top:96px}
+  .sec{padding-top:96px;padding-bottom:72px}
   .hv{max-width:520px}
   .cmx{gap:72px}
 }

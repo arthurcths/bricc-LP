@@ -3,8 +3,6 @@ const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelecto
 const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
 const brl=(n,d=2)=>n.toLocaleString('pt-BR',{style:'currency',currency:'BRL',minimumFractionDigits:d,maximumFractionDigits:d});
 
-$$('.sf').forEach(e=>{e.innerHTML='<p><b>Tecnologia</b> que enche a cozinha de pedidos</p><p class="ct"><b>'+e.dataset.n+'</b>/09 <span>↓ Role para ver mais</span></p>';});
-
 /* entrada das seções e contagem */
 const reveal=$$('.head,.flex5 .card,.bento .card,.cmx>*,.cmp .card,.calc,.sheet,.strat li,.steps li,.stat,.tm,.faq details,.who,.fm,.close').filter((e,i,a)=>a.indexOf(e)===i);
 reveal.forEach(e=>{e.classList.add('rv');const i=[...e.parentNode.children].indexOf(e);e.style.setProperty('--d',Math.min(i,5)*.07+'s');});

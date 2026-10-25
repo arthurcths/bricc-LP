@@ -16,7 +16,7 @@ Projeto desenvolvido na **trilha de conhecimento de Claude Code da 202**, como e
 
 ## O que tem na página
 
-Uma página só, em português, com nove seções numeradas mais o bloco de quem faz e o formulário final:
+Uma página só, em português, com nove seções mais o bloco de quem faz e o formulário final:
 
 1. **Hero** com a promessa e o CTA principal.
 2. **Problema:** cinco sinais de que o restaurante perde dinheiro.
